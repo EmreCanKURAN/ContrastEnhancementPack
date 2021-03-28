@@ -115,7 +115,7 @@ Returns the new image
 def hist_slide(im, levels, val, ctrl):
 #get number of levels and copy the original image
     im_out = np.zeros((im.shape[0],im.shape[1],3), dtype=np.uint8)
-#get image shape height, width and num. of channels
+#slide the histogram while maintaining the boundaries
     if imutil.is_gray(im):
         im = imutil.correct_gray(im)
         im_out = im.copy()
@@ -127,7 +127,7 @@ def hist_slide(im, levels, val, ctrl):
             lim = 0 + val
             im_out[im_out < lim] = 0
             im_out[im_out >= lim] -= val
-#apply formula, to prevent color distortion, use the same c and d values
+if rgb
     else:
         img = imutil.rgb2ycbcr(im)
         im_out = img.copy()
