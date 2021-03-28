@@ -113,7 +113,7 @@ Applies histogram sliding on an image. Takes image, levels, value and direction(
 Returns the new image
 """
 def hist_slide(im, levels, val, ctrl):
-#get number of levels and copy the original image
+#create the output image
     im_out = np.zeros((im.shape[0],im.shape[1],3), dtype=np.uint8)
 #slide the histogram while maintaining the boundaries
     if imutil.is_gray(im):
