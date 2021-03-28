@@ -242,13 +242,10 @@ Utility for bbheq, handles the cases for gray and RGB images
 Returns the new image
 """
 def bbheq_util(im, levels):
-#get number of levels and copy the original image
     im_out = im.copy()
-#get image shape height, width and num. of channels
     if imutil.is_gray(im):
         im = imutil.correct_gray(im)
         im_out = bbheq(im, levels)
-#apply formula, to prevent color distortion, use the same c and d values
     else:
         im_out = imutil.rgb2ycbcr(im)
         im_out[:,:,0] = bbheq(im_out[:,:,0], levels)
