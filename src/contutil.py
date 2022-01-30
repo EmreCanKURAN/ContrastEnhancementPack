@@ -127,7 +127,6 @@ def hist_slide(im, levels, val, ctrl):
             lim = 0 + val
             im_out[im_out < lim] = 0
             im_out[im_out >= lim] -= val
-if rgb
     else:
         img = imutil.rgb2ycbcr(im)
         im_out = img.copy()
